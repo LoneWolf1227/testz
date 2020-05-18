@@ -1,7 +1,5 @@
 <?php
 
-namespace Controllers;
-
 use classes\paginData;
 
 session_start();
