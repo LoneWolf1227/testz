@@ -1,5 +1,7 @@
 <?php
 
+namespace Controllers;
+
 session_start();
 
 class Login extends Controller{

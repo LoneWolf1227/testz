@@ -1,23 +1,28 @@
 <?php
 
 Route::set('', function(){
-    Index::CreateView('index', $_GET);
+    $index = new Controllers\Index();
+    $index->CreateView('index', $_GET);
 });
 
 Route::set('index.php', function(){
-    Index::CreateView('index', $_GET);
+    $index = new Controllers\Index();
+    $index->CreateView('index', $_GET);
 });
 
 Route::set('login', function(){
-    Login::CreateView('login');
+    $login = new Controllers\Login();
+    $login->CreateView('login');
 });
 
 Route::set('addtask', function(){
-    Addtask::CreateView('addtask');
+    $addTask = new Controllers\Addtask();
+    $addTask->CreateView('addtask');
 });
 
 Route::set('admin', function(){
-    Admin::CreateView('admin');
+    $admin = new Controllers\Admin();
+    $admin->CreateView('admin');
 });
 
 Route::set('logout',function(){
