@@ -1,5 +1,7 @@
 <?php
 
+namespace Controllers;
+
 session_start();
 
 class Admin extends Controller{
@@ -7,7 +9,7 @@ class Admin extends Controller{
         if (empty($_SESSION['user_id']) and $_SESSION['user_status'] != 'admin'){
             header('location: /login');
         }else{
-            $model = new Models\Admin;
+            $model = new \Models\Admin;
 
             @$id = $_GET['task_id'];
 

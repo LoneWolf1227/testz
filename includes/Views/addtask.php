@@ -34,8 +34,8 @@
     <div class="col-lg-12">
         <?php if(!empty($massage['massage'])){ ?>
             <div class="row justify-content-center">
-                <div class="alert alert-<?php echo $massage['type'] ?> alert-dismissible fade show" role="alert">
-                    <?php echo $massage['massage']; ?>
+                <div class="alert alert-<?=$massage['type'] ?> alert-dismissible fade show" role="alert">
+                    <?=$massage['massage']; ?>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

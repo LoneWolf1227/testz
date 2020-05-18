@@ -1,5 +1,7 @@
 <?php
 
+namespace Controllers;
+
 class Controller{
 
     public function render($viewName, $title = '', $vars = []){

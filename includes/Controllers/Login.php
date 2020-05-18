@@ -1,11 +1,13 @@
 <?php
 
+namespace Controllers;
+
 session_start();
 
 class Login extends Controller{
     
     public function CreateView($viewName){
-        $login = new Models\Login();
+        $login = new \Models\Login();
         $mas = '';
 
         if (isset($_POST['login'])){
