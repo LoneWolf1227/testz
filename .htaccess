@@ -1,0 +1,8 @@
+php_value display_errors 1
+Options -MultiViews
+RewriteEngine On
+RewriteRule /assets/css/([^\/]+).css$ assets/css/$1.css [L]
+RewriteRule /assets/js/([^\/]+).js$ assets/css/$1.js [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/? index.php?url=$1 [L,QSA]

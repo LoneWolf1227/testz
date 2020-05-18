@@ -1,0 +1,16 @@
+body{
+    background: url("/assets/img/Оригинал_ 1920x1200.jpg");
+    background-color: rgb(78, 132, 233);
+}
+
+.headtext{
+    color: white;
+}
+
+.form{
+    margin-top: 170px;
+}
+
+.form-control:focus, .form-control:hover, .btn-self:hover{
+    box-shadow: 0 6px 6px rgba(70, 70, 70, 0.78);
+}
