@@ -4,9 +4,9 @@ namespace Controllers;
 
 session_start();
 
-class Addtask extends Controller{
+class addTask extends Controller{
     public function CreateView($viewName){
-        $model = new \Models\Addtask();
+        $model = new \Models\addTask();
         @$email = htmlspecialchars($_POST['email']);
         @$name = htmlspecialchars($_POST['name']);
         @$strOutput = htmlspecialchars($_POST['editor1']);

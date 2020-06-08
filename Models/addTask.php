@@ -1,9 +1,8 @@
 <?php
 
-
 namespace Models;
 
-class Addtask extends Model
+class addTask extends Model
 {
     public function addTasks($params){
         $query = 'INSERT INTO tasks(`task`, `name`, `email`, `status`) VALUES (:task,:nama,:email,:status)';

@@ -2,7 +2,7 @@
 
 namespace Models;
 
-class Admin extends Model
+class AdminModel extends Model
 {
     public function getTaskById($id){
         $query = "SELECT * FROM tasks WHERE id = $id";

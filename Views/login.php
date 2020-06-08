@@ -12,7 +12,7 @@
                 <?php } ?>
                 <h2 style="color: white" class="mb-2">Вход</h2>
                 <div class="row justify-content-center">
-                <form action="/login" method="POST" class="col-lg-9">
+                <form action="../login" method="POST" class="col-lg-9">
                     <div class="input-group mb-3 col-12" style="margin-right: 4px">
                         <input type="text" name="name" class="form-control" placeholder="Имя" aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <div class="input-group-append">

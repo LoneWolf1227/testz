@@ -62,7 +62,7 @@
                     <th scope="col"><i class="fa fa-envelope"></i></th>
                     <th scope="col">Статус</th>
                     <th scope="col"><i class="fa fa-pencil-square-o"></i></th>
-                    <?php if ($user['isLoggedIn'] and $user['status'] == 'admin'){?>
+                    <?php if ($user['isLoggedIn'] and $user['userStatus'] == 'admin'){?>
                         <th scope="col"><i class="fa fa-pencil"></i></th>
                     <?php }?>
                 </tr>
@@ -80,7 +80,7 @@
                                 <span ><i class="fa fa-check"></i></span>
                             <?php }?>
                         </td>
-                        <?php if ($user['isLoggedIn'] and $user['status'] == 'admin'){?>
+                        <?php if ($user['isLoggedIn'] and $user['userStatus'] == 'admin'){?>
                         <td>
                             <a href="/admin?task_id=<?=$val['id']?>" class="btn-sm"><i class="fa fa-pencil"></i></a>
                         </td>

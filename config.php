@@ -4,5 +4,5 @@ return [
     'host' => "localhost",
     'dbname' => "project_test",
     'user' => "root",
-    'pass' => "",
+    'pass' => "MaJ;7j*h8d%",
 ];

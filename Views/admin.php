@@ -11,7 +11,7 @@
                         <a class="nav-link" href="/addtask">Добавит задачу</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/logout" class="nav-link" name="logout">Выход</a>
+                        <a href="../public/index.php" class="nav-link" name="logout">Выход</a>
                     </li>
                 </ul>
             </div>

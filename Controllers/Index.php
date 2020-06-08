@@ -2,16 +2,15 @@
 
 namespace Controllers;
 
+use Models\IndexModel;
 use classes\paginData;
-
-session_start();
+use classes\loginSystem;
 
 class Index extends Controller{
 
     public function CreateView($viewName, $option){
-        @$model = new \Models\Index();
-        $isLoggedIn = false;
-        $userStatus = '';
+        $model = new IndexModel();
+        $loginsys = new loginSystem();
 
         if($_GET == array() || @$_GET['by'] == ''){
             $order = 'name';
@@ -23,12 +22,8 @@ class Index extends Controller{
             $sort = $option['sort'];
         }
 
-        if (!empty($_SESSION['user_id']) and !empty($_SESSION['user_status'])){
-            $isLoggedIn = true;
-            $userStatus = $_SESSION['user_status'];
-        }
-
         $result = $model->getTasks($order , $sort);
+
         $paginator = new paginData();
         $perPage = 3;
         $pd = $paginator->Pagin($result, $option, $perPage);
@@ -36,10 +31,7 @@ class Index extends Controller{
         $vars = [
             'pn' => $pd,
             'option' => $option,
-            'user' => array(
-                'isLoggedIn' => $isLoggedIn,
-                'status' => $userStatus
-            )
+            'user' => $loginsys->checkLogin(),
         ];
         parent::render($viewName, 'Главная страница', $vars);
     }

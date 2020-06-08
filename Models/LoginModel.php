@@ -3,7 +3,7 @@
 
 namespace Models;
 
-class Login extends Model
+class LoginModel extends Model
 {
     function getUserByName($name){
         $query = "SELECT u.user_id, u.user_name, u.user_password, s.status  FROM `users` u 

@@ -2,14 +2,20 @@
 
 namespace Controllers;
 
-session_start();
+use Models\AdminModel;
+use classes\loginSystem;
 
 class Admin extends Controller{
+
     public function CreateView($viewName){
-        if (empty($_SESSION['user_id']) and $_SESSION['user_status'] != 'admin'){
-            header('location: /login');
+
+        $check = new loginSystem();
+        $checked = $check->checkLogin();
+
+        if ($checked['userStatus'] != 'admin'){
+            header('location: /index');
         }else{
-            $model = new \Models\Admin;
+            $model = new AdminModel;
 
             @$id = $_GET['task_id'];
 

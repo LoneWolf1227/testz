@@ -6,7 +6,7 @@ namespace classes;
 
 class paginData
 {
-    function Pagin($result, $option, $perPage){
+    public function Pagin($result, $option, $perPage){
         $rowCount = count($result);
         $tasks = array(array());
 
@@ -36,11 +36,11 @@ class paginData
         }
 
 
-        @$preve = ($option['p']-1);
-        if ($preve <= 0 ){
-            $preve_dis = 'disabled';
+        @$previous = ($option['p']-1);
+        if ($previous <= 0 ){
+            $previous_dis = 'disabled';
         }
-        else $preve_dis ='';
+        else $previous_dis ='';
         @$next = ($option['p']+1);
         if ($next == 1){
             $next++;
@@ -51,8 +51,8 @@ class paginData
         else $next_dis ='';
 
         return array(
-            'preve' => $preve,
-            'preve_dis' => $preve_dis,
+            'preve' => $previous,
+            'preve_dis' => $previous_dis,
             'next' => $next,
             'next_dis' => $next_dis,
             'data' => $data,
