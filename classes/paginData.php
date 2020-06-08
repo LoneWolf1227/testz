@@ -51,8 +51,8 @@ class paginData
         else $next_dis ='';
 
         return array(
-            'preve' => $previous,
-            'preve_dis' => $previous_dis,
+            '$previous' => $previous,
+            '$previous_dis' => $previous_dis,
             'next' => $next,
             'next_dis' => $next_dis,
             'data' => $data,

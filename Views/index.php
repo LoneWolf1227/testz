@@ -94,7 +94,7 @@
         <div class="col-lg-12 mb-4">
             <div class="row justify-content-center">
                 <div class="bnt-group d-flex">
-                    <a class="btn btn-sm btn-primary mr-2 <?php echo $pn['preve_dis']; ?>" style="color: white" href="/index.php?p=<?php echo $pn['preve']; ?>"><i class="fa fa-angle-left"></i></a>
+                    <a class="btn btn-sm btn-primary mr-2 <?php echo $pn['$previous_dis']; ?>" style="color: white" href="/index.php?p=<?php echo $pn['$previous']; ?>"><i class="fa fa-angle-left"></i></a>
                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                         <div class="btn-group mr-2" role="group" aria-label="First group">
                             <?php
