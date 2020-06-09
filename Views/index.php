@@ -28,8 +28,8 @@
                     по имени
                 </button>
                 <div class="dropdown-menu dropdown-menu-sm-right">
-                    <a class="dropdown-item" href="?p=<?php echo $_GET['p'];?>&sort=ASC&by=name">возрастание</a>
-                    <a class="dropdown-item" href="?p=<?php echo $_GET['p'];?>&sort=DESC&by=name">убывание</a>
+                    <a class="dropdown-item" href="?p=<?=$_GET['p'] ?>&sort=ASC&by=name">возрастание</a>
+                    <a class="dropdown-item" href="?p=<?=$_GET['p'] ?>&sort=DESC&by=name">убывание</a>
                 </div>
             </div>
             <div class="btn-group-sm mr-2 mb-2">
@@ -37,8 +37,8 @@
                     по Email
                 </button>
                 <div class="dropdown-menu dropdown-menu-sm-right">
-                    <a class="dropdown-item" href="?p=<?php echo $_GET['p'];?>&sort=ASC&by=email">возрастание</a>
-                    <a class="dropdown-item" href="?p=<?php echo $_GET['p'];?>&sort=DESC&by=email">убывание</a>
+                    <a class="dropdown-item" href="?p=<?=$_GET['p'] ?>&sort=ASC&by=email">возрастание</a>
+                    <a class="dropdown-item" href="?p=<?=$_GET['p'] ?>&sort=DESC&by=email">убывание</a>
                 </div>
             </div>
             <div class="btn-group-sm mr-2 mb-2">
@@ -46,8 +46,8 @@
                     по статусу
                 </button>
                 <div class="dropdown-menu dropdown-menu-sm-right">
-                    <a class="dropdown-item" href="?p=<?php echo $_GET['p'];?>&sort=ASC&by=status">возрастание</a>
-                    <a class="dropdown-item" href="?p=<?php echo $_GET['p'];?>&sort=DESC&by=status">убывание</a>
+                    <a class="dropdown-item" href="?p=<?=$_GET['p'] ?>&sort=ASC&by=status">возрастание</a>
+                    <a class="dropdown-item" href="?p=<?=$_GET['p'] ?>&sort=DESC&by=status">убывание</a>
                 </div>
             </div>
         </div>
@@ -71,10 +71,10 @@
                     <?php foreach ($pn['data'] as $val): ?>
                     <tr>
                         <th scope="row"><?=$val['id']; ?></th>
-                        <td><?=$val['name']; ?></td>
-                        <td><?=$val['task']; ?></td>
-                        <td><?=$val['email']; ?></td>
-                        <td><?=$val['status']; ?></td>
+                        <td><?=$val['name'] ?></td>
+                        <td><?=$val['task'] ?></td>
+                        <td><?=$val['email'] ?></td>
+                        <td><?=$val['status'] ?></td>
                         <td>
                             <?php if ($val['edit_by_admin']){?>
                                 <span ><i class="fa fa-check"></i></span>
@@ -93,41 +93,9 @@
     </div>
         <div class="col-lg-12 mb-4">
             <div class="row justify-content-center">
-                <div class="bnt-group d-flex">
-                    <a class="btn btn-sm btn-primary mr-2 <?php echo $pn['$previous_dis']; ?>" style="color: white" href="/index.php?p=<?php echo $pn['$previous']; ?>"><i class="fa fa-angle-left"></i></a>
-                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                        <div class="btn-group mr-2" role="group" aria-label="First group">
-                            <?php
-                            if($pn['pages'] <= 10){
-                                for($i=1; $i<=$pn['pages']; ++$i):?>
-                                    <a class="btn btn-sm btn-primary" style="color: white" href="/index.php?p=<?php echo $i;?>"><?php echo $i;?></a>
-                                <?php
-                                endfor;
-                            }
-                            elseif ($pn['pages'] > 10) {
-                                $inter = 10;
-                                for ($i = 0; $i < $inter; ++$i):
-                                    if ($_GET['p'] > $i+1){
-                                        $inter+=$_GET['p']-1;
-                                        if (($_GET['p']-1) <= $pn['pages']-10) {
-                                            $i = $_GET['p']-1;
-                                        }elseif ($_GET['p'] > $pn['pages']-10 && $i == 0){
-                                            $i = $pn['pages']-10;
-                                        }
-                                    }
-                                    ?>
-                                    <a class="btn btn-sm btn-primary" style="color: white" href="/index.php?p=<?php echo $i+1;?>"><?php echo $i+1;?></a>
-                                    <?php
-                                    if ($pn['pages'] <= $i+1){
-                                        break;
-                                    }
-                                endfor;
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <a class="btn btn-sm btn-primary <?php echo $pn['next_dis']; ?>" style="color: white" href="/index.php?p=<?php echo $pn['next']; ?>" ><i class="fa fa-angle-right"></i></a>
-                </div>
+                <?=$controlButtons['startOfButtons'] ?>
+                <?=$controlButtons['buttonsStack'] ?>
+                <?=$controlButtons['endOfButtons'] ?>
             </div>
         </div>
     </div>

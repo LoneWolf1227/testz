@@ -10,7 +10,7 @@ class Index extends Controller{
 
     public function CreateView($viewName, $option){
         $model = new IndexModel();
-        $loginsys = new loginSystem();
+        $loginSys = new loginSystem();
 
         if($_GET == array() || @$_GET['by'] == ''){
             $order = 'name';
@@ -28,10 +28,19 @@ class Index extends Controller{
         $perPage = 3;
         $pd = $paginator->Pagin($result, $option, $perPage);
 
+        $controlButtons = $paginator->paginButtons(
+            $pd['pages'],
+            $pd['previous'],
+            $pd['previous_dis'],
+            $pd['next'],
+            $pd['next_dis']
+        );
+
         $vars = [
             'pn' => $pd,
             'option' => $option,
-            'user' => $loginsys->checkLogin(),
+            'controlButtons' => $controlButtons,
+            'user' => $loginSys->checkLogin(),
         ];
         parent::render($viewName, 'Главная страница', $vars);
     }
